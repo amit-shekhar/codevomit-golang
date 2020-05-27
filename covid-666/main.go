@@ -141,5 +141,8 @@ func main() {
 		fmt.Fprintf(writer, "ok")
 	})
 
-	panic(http.ListenAndServe(":8080", nil))
+	err := http.ListenAndServe(":8080", nil)
+	if err != nil {
+		panic(err)
+	}
 }
